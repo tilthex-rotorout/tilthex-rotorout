@@ -54,7 +54,7 @@
       <div class="stacked-videos">
         <article class="wide-video-card">
           <h3>Main Video - Overview (1080P)</h3>
-          <video id="main-video-overview" controls preload="metadata" playsinline poster="assets/posters/default-video-poster.svg">
+          <video id="main-video-overview" controls preload="metadata" playsinline poster="assets/posters/main/main_overview_1080p.jpg">
             <source src="assets/videos/main/main_overview_1080p.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -66,7 +66,7 @@
         <div class="main-video-row">
           <article class="video-card standard-card">
             <h3>Main Video - Part I (720P)</h3>
-            <video id="main-video-part-1" controls preload="metadata" playsinline poster="assets/posters/default-video-poster.svg">
+            <video id="main-video-part-1" controls preload="metadata" playsinline poster="assets/posters/main/main_part_1_720p.jpg">
               <source src="assets/videos/main/main_part_1_720p.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -77,7 +77,7 @@
 
           <article class="video-card standard-card">
             <h3>Main Video - Part II (720P)</h3>
-            <video id="main-video-part-2" controls preload="metadata" playsinline poster="assets/posters/default-video-poster.svg">
+            <video id="main-video-part-2" controls preload="metadata" playsinline poster="assets/posters/main/main_part_2_720p.jpg">
               <source src="assets/videos/main/main_part_2_720p.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -514,9 +514,6 @@
     renderMediaPairs('outdoor-grid', outdoorPairs);
     renderMediaPairs('gate-grid', gatePairs);
     renderWritingShowcase('writing-grid', writingShowcase);
-    applyBestPoster(document.getElementById('main-video-overview'), 'assets/videos/main/main_overview_1080p.mp4');
-    applyBestPoster(document.getElementById('main-video-part-1'), 'assets/videos/main/main_part_1_720p.mp4');
-    applyBestPoster(document.getElementById('main-video-part-2'), 'assets/videos/main/main_part_2_720p.mp4');
   </script>
 </body>
 </html>
