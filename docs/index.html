@@ -291,20 +291,23 @@
       tryCandidate(0);
     }
 
-    function createVideoCard({ title, src, desc, poster }, compact = false) {
+    function createVideoCard({ title, src, desc, poster }, compact = false, usePoster = true) {
       const card = document.createElement('article');
       card.className = `video-card ${compact ? 'compact-card' : 'standard-card'}`;
+      const posterAttribute = usePoster ? ` poster="${DEFAULT_VIDEO_POSTER}"` : '';
 
       card.innerHTML = `
         <h3>${title}</h3>
-        <video controls preload="none" playsinline poster="${DEFAULT_VIDEO_POSTER}">
+        <video controls preload="none" playsinline${posterAttribute}>
           <source src="${src}" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <p class="caption-text">${desc}</p>
       `;
 
-      applyBestPoster(card.querySelector('video'), src, poster);
+      if (usePoster) {
+        applyBestPoster(card.querySelector('video'), src, poster);
+      }
 
       return card;
     }
@@ -386,7 +389,7 @@
         grid.className = 'hover-grid';
         grid.style.setProperty('--hover-columns', section.columns || 9);
         grid.style.setProperty('--hover-min-width', section.minWidth || '1440px');
-        section.videos.forEach((video) => grid.appendChild(createVideoCard(video, true)));
+        section.videos.forEach((video) => grid.appendChild(createVideoCard(video, true, false)));
 
         scroll.appendChild(grid);
         block.append(heading, scroll);
