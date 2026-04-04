@@ -358,23 +358,16 @@
       const row = document.createElement('div');
       row.className = 'hover-comparison-row';
 
-      const layout = document.createElement('div');
-      layout.className = 'hover-row-layout';
-
       const caseCard = createHoverCaseCard(caseImage);
       caseCard.classList.add('hover-case-inline');
-
-      const grid = document.createElement('div');
-      grid.className = 'hover-method-grid';
+      row.appendChild(caseCard);
 
       methods.forEach((video) => {
         const card = createVideoCard(video, true);
         card.classList.add('hover-method-card');
-        grid.appendChild(card);
+        row.appendChild(card);
       });
 
-      layout.append(caseCard, grid);
-      row.appendChild(layout);
       return row;
     }
 
@@ -399,16 +392,14 @@
         const caseLabel = document.createElement('div');
         caseLabel.className = 'hover-method-label hover-case-column-label';
         caseLabel.textContent = 'Failure Case';
+        legend.appendChild(caseLabel);
 
-        const methodLegend = document.createElement('div');
-        methodLegend.className = 'hover-method-legend';
         hoverGroups.forEach(({ title }) => {
           const label = document.createElement('div');
           label.className = 'hover-method-label';
           label.textContent = title;
-          methodLegend.appendChild(label);
+          legend.appendChild(label);
         });
-        legend.append(caseLabel, methodLegend);
 
         const rowStack = document.createElement('div');
         rowStack.className = 'hover-comparison-stack';

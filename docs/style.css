@@ -178,17 +178,11 @@ video {
 }
 
 .hover-comparison-legend,
-.hover-row-layout {
+.hover-comparison-row {
   display: grid;
-  grid-template-columns: minmax(180px, 0.9fr) minmax(0, 1fr);
+  grid-template-columns: 220px repeat(4, minmax(220px, 1fr));
   gap: 16px;
   align-items: start;
-}
-
-.hover-method-legend {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
 }
 
 .hover-method-label {
@@ -205,7 +199,6 @@ video {
 .hover-case-column-label {
   display: grid;
   place-items: center;
-  min-height: 100%;
 }
 
 .hover-case-card {
@@ -270,10 +263,8 @@ video {
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
 }
 
-.hover-method-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+.hover-comparison-row > * {
+  min-width: 0;
 }
 
 .hover-case-inline {
@@ -285,6 +276,7 @@ video {
 .hover-case-inline .hover-case-label {
   font-size: 0.9rem;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .hover-method-card {
