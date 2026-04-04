@@ -161,6 +161,8 @@ video {
 .hover-angle-stack {
   display: grid;
   gap: 18px;
+  width: min(1720px, 100%);
+  margin: 0 auto;
 }
 
 .hover-angle-block {
@@ -173,6 +175,24 @@ video {
 
 .hover-angle-title {
   margin-bottom: 14px;
+}
+
+.hover-method-legend {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.hover-method-label {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7fc 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .hover-case-grid {
@@ -225,11 +245,46 @@ video {
   font-size: 0.84rem;
 }
 
-.hover-grid {
+.hover-comparison-stack {
   display: grid;
-  grid-template-columns: repeat(var(--hover-columns, 9), minmax(0, 1fr));
-  gap: 12px;
-  min-width: var(--hover-min-width, 1440px);
+  gap: 16px;
+}
+
+.hover-comparison-row {
+  background: #ffffff;
+  border: 1px solid rgba(216, 224, 236, 0.9);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.hover-row-title {
+  margin: 0 0 12px;
+  text-align: left;
+  font-size: 0.98rem;
+}
+
+.hover-method-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.hover-method-card {
+  height: 100%;
+}
+
+.hover-method-card h3 {
+  font-size: 0.94rem;
+  margin-bottom: 10px;
+}
+
+.hover-method-card video {
+  border-radius: 12px;
+}
+
+.hover-method-card .caption-text {
+  font-size: 0.84rem;
 }
 
 .feature-grid {
@@ -374,6 +429,11 @@ video {
 }
 
 @media (max-width: 1200px) {
+  .hover-method-legend,
+  .hover-method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -396,6 +456,15 @@ video {
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hover-method-legend,
+  .hover-method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hover-row-title {
+    text-align: center;
   }
 
   .outdoor-media-split {
