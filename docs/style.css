@@ -177,11 +177,18 @@ video {
   margin-bottom: 14px;
 }
 
+.hover-comparison-legend,
+.hover-row-layout {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.9fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
 .hover-method-legend {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
-  margin-bottom: 16px;
 }
 
 .hover-method-label {
@@ -195,11 +202,10 @@ video {
   letter-spacing: 0.02em;
 }
 
-.hover-case-grid {
+.hover-case-column-label {
   display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
-  gap: 12px;
-  min-width: 1440px;
+  place-items: center;
+  min-height: 100%;
 }
 
 .hover-case-card {
@@ -253,7 +259,7 @@ video {
 .hover-comparison-table {
   display: grid;
   gap: 16px;
-  min-width: 1100px;
+  min-width: 1320px;
 }
 
 .hover-comparison-row {
@@ -264,16 +270,21 @@ video {
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
 }
 
-.hover-row-title {
-  margin: 0 0 12px;
-  text-align: left;
-  font-size: 0.98rem;
-}
-
 .hover-method-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
+}
+
+.hover-case-inline {
+  height: 100%;
+  padding: 12px;
+  box-shadow: none;
+}
+
+.hover-case-inline .hover-case-label {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 
 .hover-method-card {

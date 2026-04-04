@@ -162,16 +162,24 @@
         }))
       }
     ];
-    const hoverCaseImages = hoverCaseOrder.map((clipId) => ({
-      title: `Case ${clipId}`,
-      clipId,
-      src: `assets/images/hover/cases/${clipId}.jpg`
-    }));
+    const hoverCaseImages = Object.fromEntries(
+      hoverCaseOrder.map((clipId) => [
+        clipId,
+        {
+          clipId,
+          src: `assets/images/hover/cases/${clipId}.jpg`
+        }
+      ])
+    );
 
     const hoverAngleSections = hoverAngleConfigs.map(({ title: angleTitle, folder: angleFolder, clipItems }) => ({
       title: `${angleTitle} Hovering`,
       rows: clipItems.map(({ label, clipId }) => ({
-        title: `Failure case ${label}`,
+        caseImage: {
+          title: `Failure case ${label}`,
+          clipId,
+          src: hoverCaseImages[clipId].src
+        },
         methods: hoverGroups.map(({ title, folder }) => ({
           title,
           src: `assets/videos/hover/${angleFolder}/${folder}/${clipId}.mp4`,
@@ -180,7 +188,7 @@
         }))
       }))
     }));
-    const hoverSectionNoteText = 'Hovering videos are arranged by failure case so each row compares BTO-CL, BTO-AL, UTO-CL, and UTO-AL side by side. Case images remain in the order 1, 4, 5, 12, 34, 13, 16, 36, 136. The 0 deg set keeps 4 representative rows because symmetric failure cases share the same clip.';
+    const hoverSectionNoteText = 'Each row starts with the failure-case image, followed by BTO-CL, BTO-AL, UTO-CL, and UTO-AL for direct side-by-side comparison. The 0 deg set uses representative images for symmetric failure cases that share the same clip.';
 
     const trajectoryPairs = [
       {
@@ -346,13 +354,15 @@
       return card;
     }
 
-    function createHoverComparisonRow({ title, methods }) {
+    function createHoverComparisonRow({ caseImage, methods }) {
       const row = document.createElement('div');
       row.className = 'hover-comparison-row';
 
-      const heading = document.createElement('h4');
-      heading.className = 'hover-row-title';
-      heading.textContent = title;
+      const layout = document.createElement('div');
+      layout.className = 'hover-row-layout';
+
+      const caseCard = createHoverCaseCard(caseImage);
+      caseCard.classList.add('hover-case-inline');
 
       const grid = document.createElement('div');
       grid.className = 'hover-method-grid';
@@ -363,34 +373,17 @@
         grid.appendChild(card);
       });
 
-      row.append(heading, grid);
+      layout.append(caseCard, grid);
+      row.appendChild(layout);
       return row;
     }
 
-    function renderHoverAngleSections(container, sections, caseImages) {
+    function renderHoverAngleSections(container, sections) {
       if (!container) {
         return;
       }
 
       container.replaceChildren();
-
-      const caseBlock = document.createElement('article');
-      caseBlock.className = 'hover-angle-block';
-
-      const caseHeading = document.createElement('h3');
-      caseHeading.className = 'hover-angle-title';
-      caseHeading.textContent = 'Case Images';
-
-      const caseScroll = document.createElement('div');
-      caseScroll.className = 'hover-grid-scroll';
-
-      const caseGrid = document.createElement('div');
-      caseGrid.className = 'hover-case-grid';
-      caseImages.forEach((item) => caseGrid.appendChild(createHoverCaseCard(item)));
-
-      caseScroll.appendChild(caseGrid);
-      caseBlock.append(caseHeading, caseScroll);
-      container.appendChild(caseBlock);
 
       sections.forEach((section) => {
         const block = document.createElement('article');
@@ -401,13 +394,21 @@
         heading.textContent = section.title;
 
         const legend = document.createElement('div');
-        legend.className = 'hover-method-legend';
+        legend.className = 'hover-comparison-legend';
+
+        const caseLabel = document.createElement('div');
+        caseLabel.className = 'hover-method-label hover-case-column-label';
+        caseLabel.textContent = 'Failure Case';
+
+        const methodLegend = document.createElement('div');
+        methodLegend.className = 'hover-method-legend';
         hoverGroups.forEach(({ title }) => {
           const label = document.createElement('div');
           label.className = 'hover-method-label';
           label.textContent = title;
-          legend.appendChild(label);
+          methodLegend.appendChild(label);
         });
+        legend.append(caseLabel, methodLegend);
 
         const rowStack = document.createElement('div');
         rowStack.className = 'hover-comparison-stack';
@@ -538,7 +539,7 @@
       hoverSectionNote.textContent = hoverSectionNoteText;
     }
 
-    renderHoverAngleSections(document.getElementById('hover-grid'), hoverAngleSections, hoverCaseImages);
+    renderHoverAngleSections(document.getElementById('hover-grid'), hoverAngleSections);
     renderMediaPairs('trajectory-grid', trajectoryPairs);
     renderMediaPairs('outdoor-grid', outdoorPairs);
     renderMediaPairs('gate-grid', gatePairs);
