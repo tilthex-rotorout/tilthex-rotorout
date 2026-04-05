@@ -93,6 +93,7 @@
       <h2>Experimental Overview</h2>
       <p class="lead-text">
         Presented below is a more comprehensive edit of our experimental footage, featuring additional camera perspectives and a full, more complete record of the experimental process.
+        It is critical to emphasize that none of the experiments rely on any external positioning devices or infrastructure; all operations are performed exclusively using the aircraft’s own onboard sensors. This robustly validates our system’s capability to execute missions in a diverse array of extreme operating environments.
       </p>
     </section>
 
@@ -104,25 +105,25 @@
 
     <section class="panel section-panel">
       <h2>Trajectory Tracking</h2>
-      <p class="section-note">Use this section for the paired trajectory tracking video and image.</p>
+      <p class="section-note">Second, the trajectory tracking experiments. We conducted trajectory tracking tests under two distinct scenarios: indoor tests under 5 m/s wind disturbance, and outdoor tests in high-cold environments with stochastic wind disturbances ranging from approximately 3 m/s to 5 m/s.</p>
       <div id="trajectory-grid" class="outdoor-pair-list"></div>
     </section>
 
     <section class="panel section-panel">
       <h2>Outdoor Trajectory Tracking</h2>
-      <p class="section-note">Use this section for the outdoor trajectory tracking video-image pairs.</p>
+      <p class="section-note"> </p>
       <div id="outdoor-grid" class="outdoor-pair-list"></div>
     </section>
 
     <section class="panel section-panel">
       <h2>Gate Traversal</h2>
-      <p class="section-note">Use this section for the paired gate traversal video and image.</p>
+      <p class="section-note">Third, the tilted narrow gap traversal experiment. Unlike conventional quadrotors, which rely on aggressive high-maneuver attitude changes to pass through the aperture, our aircraft completes the traversal while maintaining a predefined fixed attitude.</p>
       <div id="gate-grid" class="outdoor-pair-list"></div>
     </section>
 
     <section class="panel section-panel">
-      <h2>Writing</h2>
-      <p class="section-note">Use this section for the writing demonstrations.</p>
+      <h2>Aerial Writing</h2>
+      <p class="section-note">Fourth, the aerial writing task. As the most representative benchmark for aerial manipulation, this task requires the aircraft to maintain continuous physical contact with the environment, rendering it significantly more challenging than short-duration contact tasks such as aerial grasping.</p>
       <div id="writing-grid" class="writing-showcase"></div>
     </section>
   </main>
@@ -197,7 +198,7 @@
         }))
       }))
     }));
-    const hoverSectionNoteText = 'Each row starts with the failure-case image, followed by BTO-CL, BTO-AL, UTO-CL, and UTO-AL for direct side-by-side comparison. The 0 deg set uses representative images for symmetric failure cases that share the same clip.';
+    const hoverSectionNoteText = 'First, the hovering experiments. With the aircraft maintaining stable hovering at 0° and 45° attitudes, we injected instantaneous abrupt faults to evaluate the performance of the two methods on both aircraft platforms. Each row starts with the failure-case image, followed by BTO-CL, BTO-AL, UTO-CL, and UTO-AL for direct side-by-side comparison. The 0 deg set uses representative images for symmetric failure cases that share the same clip.';
 
     const trajectoryPairs = [
       {
