@@ -176,7 +176,7 @@
       title: `${angleTitle} Hovering`,
       rows: clipItems.map(({ label, clipId }) => ({
         caseImage: {
-          title: `Failure case ${label}`,
+          title: `Failure rotor ${label}`,
           clipId,
           src: hoverCaseImages[clipId].src
         },
@@ -391,7 +391,7 @@
 
         const caseLabel = document.createElement('div');
         caseLabel.className = 'hover-method-label hover-case-column-label';
-        caseLabel.textContent = 'Failure Case';
+        caseLabel.textContent = 'Failure Rotor';
         legend.appendChild(caseLabel);
 
         hoverGroups.forEach(({ title }) => {
