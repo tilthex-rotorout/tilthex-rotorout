@@ -51,6 +51,39 @@ h3 {
   font-size: 1.02rem;
 }
 
+.video-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.title-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.title-status-success {
+  color: #166534;
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+.title-status-fail {
+  color: #b91c1c;
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
 .panel {
   background: var(--panel);
   border: 1px solid var(--line);

@@ -92,9 +92,7 @@
     <section class="panel narrow-panel">
       <h2>Experimental Overview</h2>
       <p class="lead-text">
-        Replace this block with a short introduction to the experiment sections below. For example, you can explain the order
-        of the experiments, the evaluation dimensions, or the relationship between hovering, tracking, outdoor testing,
-        gate traversal, and writing.
+        Presented below is a more comprehensive edit of our experimental footage, featuring additional camera perspectives and a full, more complete record of the experimental process.
       </p>
     </section>
 
@@ -142,6 +140,16 @@
       { title: 'UTO-CL', folder: 'UTO-CL' },
       { title: 'UTO-AL', folder: 'UTO-AL' }
     ];
+    const hoverMethodStatuses = {
+      'BTO-CL': 'success',
+      'BTO-AL': 'success',
+      'UTO-CL': 'fail',
+      'UTO-AL': 'fail'
+    };
+    const hoverStatusLabels = {
+      success: 'Success',
+      fail: 'Fail'
+    };
     const hoverAngleConfigs = [
       {
         title: '0 deg',
@@ -182,6 +190,7 @@
         },
         methods: hoverGroups.map(({ title, folder }) => ({
           title,
+          status: hoverMethodStatuses[title] || null,
           src: `assets/videos/hover/${angleFolder}/${folder}/${clipId}.mp4`,
           poster: `assets/posters/hover/${angleFolder}/${folder}/${clipId}.jpg`,
           desc: `${angleTitle} ${title} hovering clip ${label}.`
@@ -297,13 +306,16 @@
       tryCandidate(0);
     }
 
-    function createVideoCard({ title, src, desc, poster }, compact = false, usePoster = true) {
+    function createVideoCard({ title, src, desc, poster, status }, compact = false, usePoster = true) {
       const card = document.createElement('article');
       card.className = `video-card ${compact ? 'compact-card' : 'standard-card'}`;
       const posterAttribute = usePoster ? ` poster="${DEFAULT_VIDEO_POSTER}"` : '';
+      const statusMarkup = status
+        ? ` <span class="title-status title-status-${status}">${hoverStatusLabels[status] || status}</span>`
+        : '';
 
       card.innerHTML = `
-        <h3>${title}</h3>
+        <h3 class="video-title">${title}${statusMarkup}</h3>
         <video controls preload="none" playsinline${posterAttribute}>
           <source src="${src}" type="video/mp4" />
           Your browser does not support the video tag.
