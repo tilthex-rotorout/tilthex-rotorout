@@ -53,36 +53,36 @@
       <p class="section-note">The primary demonstration is split into three files: one 1080P overview on top and two 720P clips shown side by side below.</p>
       <div class="stacked-videos">
         <article class="wide-video-card">
-          <h3>Main Video - Overview (1080P)</h3>
+          <h3>Main Video - Overview</h3>
           <video id="main-video-overview" controls preload="metadata" playsinline poster="assets/posters/main/main_overview_1080p.jpg">
             <source src="assets/videos/main/main_overview_1080p.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <p class="caption-text">
-            Replace with a one-sentence description of the full 1080P overview video.
+            Overview for our work: motivation, challenge, and contributions.
           </p>
         </article>
 
         <div class="main-video-row">
           <article class="video-card standard-card">
-            <h3>Main Video - Part I (720P)</h3>
+            <h3>Main Video - Part I</h3>
             <video id="main-video-part-1" controls preload="metadata" playsinline poster="assets/posters/main/main_part_1_720p.jpg">
               <source src="assets/videos/main/main_part_1_720p.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p class="caption-text">
-              Replace with a one-sentence description of the first 720P continuation clip.
+              Experiment I, II: Indoor Tracking and Outdoor Tracking.
             </p>
           </article>
 
           <article class="video-card standard-card">
-            <h3>Main Video - Part II (720P)</h3>
+            <h3>Main Video - Part II</h3>
             <video id="main-video-part-2" controls preload="metadata" playsinline poster="assets/posters/main/main_part_2_720p.jpg">
               <source src="assets/videos/main/main_part_2_720p.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p class="caption-text">
-              Replace with a one-sentence description of the second 720P continuation clip.
+              Experiment III, IV: Narrow Gap Traversal and Aerial Writing.
             </p>
           </article>
         </div>
@@ -212,27 +212,27 @@
 
     const outdoorPairs = [
       {
-        title: 'Outdoor 01',
+        title: 'Outdoor trajectory tracking under low temperature and stochastic wind disturbance',
         videoSrc: 'assets/videos/outdoor/outdoor_01.mp4',
         imageSrc: 'assets/images/outdoor/outdoor_01.jpg',
         poster: 'assets/posters/outdoor/outdoor_01.jpg',
-        desc: 'Replace with the first outdoor tracking clip and its paired image.'
+        desc: 'Video and tracking error statistics for outdoor trajectory tracking.'
       }
     ];
 
     const gatePairs = [
       {
-        title: 'Gate 01',
+        title: 'Gate-traversal experiment',
         videoSrc: 'assets/videos/gate/gate_01.mp4',
         imageSrc: 'assets/images/gate/gate_01.jpg',
         poster: 'assets/posters/gate/gate_01.jpg',
-        desc: 'Replace with the gate traversal clip and its paired image.'
+        desc: 'Video and tracking comparison for gate-traversal experiment.'
       }
     ];
 
     const writingShowcase = {
       featuredVideo: {
-        title: 'Writing Video 01',
+        title: 'Writing Video',
         src: 'assets/videos/writing/writing_01.mp4',
         desc: 'Replace with the featured writing demonstration clip.'
       },
@@ -240,18 +240,18 @@
         title: 'Writing Image',
         src: 'assets/images/writing/writing_01.jpg',
         alt: 'Writing paired image',
-        desc: 'Replace with the paired writing image shown next to the featured video.'
+        desc: ''
       },
       bottomVideos: [
         {
-          title: 'Writing Video 02',
+          title: 'Writing Video without rotor failure',
           src: 'assets/videos/writing/writing_02.mp4',
-          desc: 'Replace with the second writing clip shown in the lower row.'
+          desc: ''
         },
         {
-          title: 'Writing Video 03',
+          title: 'Writing Video with rotor failure',
           src: 'assets/videos/writing/writing_03.mp4',
-          desc: 'Replace with the third writing clip shown in the lower row.'
+          desc: ''
         }
       ]
     };
