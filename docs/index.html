@@ -151,6 +151,11 @@
       success: 'Success',
       failure: 'Failure'
     };
+    const hoverStatusClasses = {
+      success: 'success',
+      fail: 'fail',
+      failure: 'fail'
+    };
     const hoverAngleConfigs = [
       {
         title: '0 deg',
@@ -234,7 +239,7 @@
       featuredVideo: {
         title: 'Writing Video',
         src: 'assets/videos/writing/writing_01.mp4',
-        desc: 'Replace with the featured writing demonstration clip.'
+        desc: ''
       },
       pairedImage: {
         title: 'Writing Image',
@@ -311,8 +316,9 @@
       const card = document.createElement('article');
       card.className = `video-card ${compact ? 'compact-card' : 'standard-card'}`;
       const posterAttribute = usePoster ? ` poster="${DEFAULT_VIDEO_POSTER}"` : '';
+      const statusClass = hoverStatusClasses[status] || status;
       const statusMarkup = status
-        ? ` <span class="title-status title-status-${status}">${hoverStatusLabels[status] || status}</span>`
+        ? ` <span class="title-status title-status-${statusClass}">${hoverStatusLabels[status] || status}</span>`
         : '';
 
       card.innerHTML = `
