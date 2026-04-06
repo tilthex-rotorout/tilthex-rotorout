@@ -141,11 +141,79 @@
       { title: 'UTO-CL', folder: 'UTO-CL' },
       { title: 'UTO-AL', folder: 'UTO-AL' }
     ];
-    const hoverMethodStatuses = {
-      'BTO-CL': 'success',
-      'BTO-AL': 'success',
-      'UTO-CL': 'failure',
-      'UTO-AL': 'failure'
+    const hoverVideoStatuses = {
+      '0deg': {
+        'BTO-CL': {
+          '1': 'success',
+          '12': 'success',
+          '13': 'failure',
+          '136': 'failure'
+        },
+        'BTO-AL': {
+          '1': 'success',
+          '12': 'success',
+          '13': 'success',
+          '136': 'success'
+        },
+        'UTO-CL': {
+          '1': 'success',
+          '12': 'success',
+          '13': 'failure',
+          '136': 'failure'
+        },
+        'UTO-AL': {
+          '1': 'success',
+          '12': 'success',
+          '13': 'success',
+          '136': 'success'
+        }
+      },
+      '45deg': {
+        'BTO-CL': {
+          '1': 'success',
+          '4': 'success',
+          '5': 'success',
+          '12': 'failure',
+          '34': 'failure',
+          '13': 'failure',
+          '16': 'failure',
+          '36': 'failure',
+          '136': 'failure'
+        },
+        'BTO-AL': {
+          '1': 'success',
+          '4': 'success',
+          '5': 'success',
+          '12': 'success',
+          '34': 'success',
+          '13': 'success',
+          '16': 'success',
+          '36': 'success',
+          '136': 'success'
+        },
+        'UTO-CL': {
+          '1': 'failure',
+          '4': 'failure',
+          '5': 'success',
+          '12': 'failure',
+          '34': 'failure',
+          '13': 'failure',
+          '16': 'failure',
+          '36': 'failure',
+          '136': 'failure'
+        },
+        'UTO-AL': {
+          '1': 'failure',
+          '4': 'success',
+          '5': 'success',
+          '12': 'failure',
+          '34': 'success',
+          '13': 'failure',
+          '16': 'success',
+          '36': 'failure',
+          '136': 'success'
+        }
+      }
     };
     const hoverStatusLabels = {
       success: 'Success',
@@ -186,6 +254,10 @@
       ])
     );
 
+    function getHoverVideoStatus(angleFolder, methodFolder, clipId) {
+      return hoverVideoStatuses[angleFolder]?.[methodFolder]?.[clipId] || null;
+    }
+
     const hoverAngleSections = hoverAngleConfigs.map(({ title: angleTitle, folder: angleFolder, clipItems }) => ({
       title: `${angleTitle} Hovering`,
       rows: clipItems.map(({ label, clipId }) => ({
@@ -196,7 +268,7 @@
         },
         methods: hoverGroups.map(({ title, folder }) => ({
           title,
-          status: hoverMethodStatuses[title] || null,
+          status: getHoverVideoStatus(angleFolder, folder, clipId),
           src: `assets/videos/hover/${angleFolder}/${folder}/${clipId}.mp4`,
           poster: `assets/posters/hover/${angleFolder}/${folder}/${clipId}.jpg`,
           desc: `${angleTitle} ${title} hovering clip ${label}.`
