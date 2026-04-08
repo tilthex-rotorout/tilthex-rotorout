@@ -37,7 +37,7 @@ Each poster below opens the corresponding MP4 clip stored in this repository.
 
 <table>
   <tr>
-    <td align="center" width="33.33%">
+    <td align="center" valign="top" width="33.33%">
       <a href="docs/assets/videos/main/main_overview_1080p.mp4">
         <img src="docs/assets/posters/main/main_overview_1080p.jpg" alt="Main video overview" width="100%">
       </a>
@@ -46,7 +46,7 @@ Each poster below opens the corresponding MP4 clip stored in this repository.
       <br>
       Problem setting, key challenges, and main technical contributions.
     </td>
-    <td align="center" width="33.33%">
+    <td align="center" valign="top" width="33.33%">
       <a href="docs/assets/videos/main/main_part_1_720p.mp4">
         <img src="docs/assets/posters/main/main_part_1_720p.jpg" alt="Main video part I" width="100%">
       </a>
@@ -55,7 +55,7 @@ Each poster below opens the corresponding MP4 clip stored in this repository.
       <br>
       Hovering and trajectory-tracking experiments under single and multiple rotor failures.
     </td>
-    <td align="center" width="33.33%">
+    <td align="center" valign="top" width="33.33%">
       <a href="docs/assets/videos/main/main_part_2_720p.mp4">
         <img src="docs/assets/posters/main/main_part_2_720p.jpg" alt="Main video part II" width="100%">
       </a>
