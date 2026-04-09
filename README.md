@@ -69,7 +69,7 @@ Each video slot below shows the corresponding poster image, with a direct MP4 li
 
 ## Experiment Highlights
 
-The sections below keep the most visual parts of the supplementary materials directly inside the README while staying compatible with GitHub's static rendering.
+The sections below keep the most visual parts of the supplementary materials directly inside the README while staying compatible with static repository rendering.
 
 ### Indoor Trajectory Tracking
 
@@ -205,4 +205,4 @@ Representative case images are reused for symmetric failure sets that share the 
 
 ## Notes
 
-- GitHub README files cannot preserve the full CSS and JavaScript behavior of the original page, so videos are presented here as poster images with direct links and compact tables.
+- README rendering cannot preserve the full CSS and JavaScript behavior of the original page, so videos are presented here as poster images with direct links and compact tables.
