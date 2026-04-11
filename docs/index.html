@@ -51,12 +51,12 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
 
     <section class="panel video-stack-panel">
       <h2>Main Video</h2>
-      <p class="section-note">The primary demonstration is split into three files: one 1080P overview on top and two 720P clips shown side by side below.</p>
+      <p class="section-note">The primary demonstration is split into three low-resolution preview clips: one overview on top and two clips shown side by side below.</p>
       <div class="stacked-videos">
         <article class="wide-video-card">
           <h3>Main Video - Overview</h3>
           <video id="main-video-overview" controls preload="metadata" playsinline poster="assets/posters/main/main_overview_1080p.jpg">
-            <source src="assets/videos/main/main_overview_1080p.mp4" type="video/mp4" />
+            <source src="assets/videos/main/main_overview_preview_360p.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <p class="caption-text">
@@ -68,7 +68,7 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
           <article class="video-card standard-card">
             <h3>Main Video - Part I</h3>
             <video id="main-video-part-1" controls preload="metadata" playsinline poster="assets/posters/main/main_part_1_720p.jpg">
-              <source src="assets/videos/main/main_part_1_720p.mp4" type="video/mp4" />
+              <source src="assets/videos/main/main_part_1_preview_360p.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p class="caption-text">
@@ -79,7 +79,7 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
           <article class="video-card standard-card">
             <h3>Main Video - Part II</h3>
             <video id="main-video-part-2" controls preload="metadata" playsinline poster="assets/posters/main/main_part_2_720p.jpg">
-              <source src="assets/videos/main/main_part_2_720p.mp4" type="video/mp4" />
+              <source src="assets/videos/main/main_part_2_preview_360p.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p class="caption-text">
@@ -269,7 +269,7 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
         methods: hoverGroups.map(({ title, folder }) => ({
           title,
           status: getHoverVideoStatus(angleFolder, folder, clipId),
-          src: `assets/videos/hover/${angleFolder}/${folder}/${clipId}.mp4`,
+          src: `assets/videos/hover/${angleFolder}/${folder}/${clipId}_preview_360p.mp4`,
           poster: `assets/posters/hover/${angleFolder}/${folder}/${clipId}.jpg`,
           desc: `${angleTitle} ${title} hovering clip ${label}.`
         }))
@@ -280,7 +280,7 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
     const trajectoryPairs = [
       {
         title: 'Indoor trajectory tracking under 5m/s wind disturbance',
-        videoSrc: 'assets/videos/trajectory/trajectory_01.mp4',
+        videoSrc: 'assets/videos/trajectory/trajectory_01_preview_360p.mp4',
         imageSrc: 'assets/images/trajectory/trajectory_01.jpg',
         poster: 'assets/posters/trajectory/trajectory_01.jpg',
         desc: 'Video and tracking error statistics for indoor trajectory tracking.'
@@ -290,7 +290,7 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
     const outdoorPairs = [
       {
         title: 'Outdoor trajectory tracking under low temperature and stochastic wind disturbance',
-        videoSrc: 'assets/videos/outdoor/outdoor_01.mp4',
+        videoSrc: 'assets/videos/outdoor/outdoor_01_preview_360p.mp4',
         imageSrc: 'assets/images/outdoor/outdoor_01.jpg',
         poster: 'assets/posters/outdoor/outdoor_01.jpg',
         desc: 'Video and tracking error statistics for outdoor trajectory tracking.'
@@ -300,7 +300,7 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
     const gatePairs = [
       {
         title: 'Gate-traversal experiment',
-        videoSrc: 'assets/videos/gate/gate_01.mp4',
+        videoSrc: 'assets/videos/gate/gate_01_preview_360p.mp4',
         imageSrc: 'assets/images/gate/gate_01.jpg',
         poster: 'assets/posters/gate/gate_01.jpg',
         desc: 'Video and tracking comparison for gate-traversal experiment.'
@@ -310,7 +310,7 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
     const writingShowcase = {
       featuredVideo: {
         title: 'Writing Video',
-        src: 'assets/videos/writing/writing_01.mp4',
+        src: 'assets/videos/writing/writing_01_preview_360p.mp4',
         desc: ''
       },
       pairedImage: {
@@ -322,12 +322,12 @@ Additional onboard-sensor-only experiments, including indoor tracking under wind
       bottomVideos: [
         {
           title: 'Writing Video without rotor failure',
-          src: 'assets/videos/writing/writing_02.mp4',
+          src: 'assets/videos/writing/writing_02_preview_360p.mp4',
           desc: ''
         },
         {
           title: 'Writing Video with rotor failure',
-          src: 'assets/videos/writing/writing_03.mp4',
+          src: 'assets/videos/writing/writing_03_preview_360p.mp4',
           desc: ''
         }
       ]
