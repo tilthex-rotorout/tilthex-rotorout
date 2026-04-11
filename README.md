@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/assets/posters/overview.jpg" alt="Overview figure" width="1000">
+  <img src="docs/assets/posters/overview_readme_2400.jpg" alt="Overview figure" width="1200">
 </p>
 
 <p align="center">
